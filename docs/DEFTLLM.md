@@ -6,12 +6,27 @@ Fork of [FreeLLMAPI](https://github.com/tashfeenahmed/freellmapi). See [SECURITY
 
 ---
 
+## Live instance
+
+| | |
+|---|---|
+| **Dashboard** | [https://free.deftluke.online](https://free.deftluke.online) |
+| **API base** | `https://free.deftluke.online/v1` |
+
+1. Open the dashboard and sign in (or create an account if this is your own deploy).
+2. Go to **Keys** → copy your **Unified API key**.
+3. Point any OpenAI SDK at the API base above with `model: "auto"`.
+
+See [examples/python/chat_auto.py](../examples/python/chat_auto.py) for a full Python example (set `DEFTLLM_BASE_URL=https://free.deftluke.online/v1`).
+
+---
+
 ## Quick start
 
 ### 1. Run the server
 
 ```bash
-git clone https://github.com/YOUR_USER/free-llm.git
+git clone https://github.com/DeftLuke/free-llm.git
 cd free-llm
 npm install
 cp .env.example .env
@@ -202,7 +217,3 @@ To copy a local setup (keys + fallback chain) to production, use the same `ENCRY
 | Can't reach from another PC | Use `npm run dev:lan` or `HOST_BIND=0.0.0.0` with Docker |
 
 ---
-
-## License
-
-MIT (upstream FreeLLMAPI). Free LLM is a branded fork for personal use.

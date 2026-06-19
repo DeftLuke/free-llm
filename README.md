@@ -7,6 +7,27 @@
 
 **One endpoint. Many free models. Smart failover.**
 
+### Live instance
+
+**Dashboard:** [free.deftluke.online](https://free.deftluke.online)  
+**API base:** `https://free.deftluke.online/v1`
+
+Use any OpenAI-compatible client with `model: "auto"`. Get your unified API key from the **Keys** page after signing in to the dashboard.
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://free.deftluke.online/v1",
+    api_key="your-unified-key-from-dashboard",
+)
+
+print(client.chat.completions.create(
+    model="auto",
+    messages=[{"role": "user", "content": "Hello"}],
+).choices[0].message.content)
+```
+
 </div>
 
 ---
