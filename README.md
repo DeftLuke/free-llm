@@ -7,6 +7,9 @@
 
 **One endpoint. Many free models. Smart failover.**
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Shamim_Siddik-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/programmer-shamim/)
+[![GitHub](https://img.shields.io/badge/GitHub-DeftLuke-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/DeftLuke)
+
 ### Live instance
 
 **Dashboard:** [free.deftluke.online](https://free.deftluke.online)  

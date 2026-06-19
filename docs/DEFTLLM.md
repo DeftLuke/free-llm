@@ -176,6 +176,7 @@ Rough stacked capacity when fully configured: **~300M–1.7B tokens/month** depe
 | API base | http://localhost:3001/v1 |
 | Admin auth | Email + password (set on first run) |
 | App API auth | Unified `deftllm-…` key (Bearer or `x-api-key`) |
+| Author | [Shamim Siddik · LinkedIn](https://www.linkedin.com/in/programmer-shamim/) · [GitHub](https://github.com/DeftLuke) |
 
 ---
 
