@@ -1,6 +1,17 @@
 <div align="center">
 
-# FreeLLMAPI
+# Free LLM
+
+> Self-hosted OpenAI-compatible LLM router — stack free tiers from 16+ providers behind one `/v1` endpoint.  
+> Fork of [FreeLLMAPI](https://github.com/tashfeenahmed/freellmapi) · [Setup guide](docs/DEFTLLM.md) · [Security](SECURITY.md)
+
+**One endpoint. Many free models. Smart failover.**
+
+</div>
+
+---
+
+## About (upstream FreeLLMAPI)
 
 **One OpenAI-compatible endpoint. Sixteen free LLM providers. ~1.7B tokens per month.**
 

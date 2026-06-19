@@ -3,6 +3,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import type { ChatMessage, ModelListRow } from '@freellmapi/shared/types.js';
+import { APP_NAME } from '@freellmapi/shared/branding.js';
 import { routeRequest, resolveRoutingChain, recordRateLimitHit, recordSuccess, hasEnabledVisionModel, hasEnabledToolsModel, type RouteResult, type ResolvedChain } from '../services/router.js';
 import { recordRequest, recordTokens, setCooldown, getCooldownDurationForLimit, PAYMENT_REQUIRED_COOLDOWN_MS, MODEL_FORBIDDEN_COOLDOWN_MS } from '../services/ratelimit.js';
 import { runEmbeddings, EmbeddingsError } from '../services/embeddings.js';
@@ -176,7 +177,7 @@ proxyRouter.get('/models', (req: Request, res: Response) => {
         id: AUTO_MODEL_ID,
         object: 'model',
         created: 0,
-        owned_by: 'freellmapi',
+        owned_by: APP_NAME.toLowerCase(),
         name: 'Auto (router picks the best available model)',
         context_window: autoContextWindow,
         // `context_length` is OpenRouter's field name and the one most
@@ -190,7 +191,7 @@ proxyRouter.get('/models', (req: Request, res: Response) => {
         id: FUSION_MODEL_ID,
         object: 'model',
         created: 0,
-        owned_by: 'freellmapi',
+        owned_by: APP_NAME.toLowerCase(),
         name: 'Fusion (panel of models answer in parallel, a judge synthesizes one answer)',
         context_window: autoContextWindow,
         context_length: autoContextWindow,

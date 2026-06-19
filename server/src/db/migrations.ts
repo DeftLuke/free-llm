@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import Database from 'better-sqlite3';
+import { UNIFIED_KEY_PREFIX } from '@freellmapi/shared/branding.js';
 import { initEncryptionKey } from '../lib/crypto.js';
 import { applyModelPricing } from './model-pricing.js';
 
@@ -2160,7 +2161,7 @@ function backfillFallback(db: Database.Database) {
 function ensureUnifiedKey(db: Database.Database) {
   const existing = db.prepare("SELECT value FROM settings WHERE key = 'unified_api_key'").get() as { value: string } | undefined;
   if (!existing) {
-    const key = `freellmapi-${crypto.randomBytes(24).toString('hex')}`;
+    const key = `${UNIFIED_KEY_PREFIX}-${crypto.randomBytes(24).toString('hex')}`;
     db.prepare("INSERT INTO settings (key, value) VALUES ('unified_api_key', ?)").run(key);
     console.log(`\n  Your unified API key: ${key}\n`);
   }

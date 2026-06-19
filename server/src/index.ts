@@ -1,6 +1,7 @@
 import './env.js';
 import { createApp } from './app.js';
 import { initDb, getSetting } from './db/index.js';
+import { APP_NAME } from '@freellmapi/shared/branding.js';
 import { startHealthChecker } from './services/health.js';
 import { applyProxyUrl, applyProxyEnabled, applyProxyBypass } from './lib/proxy.js';
 import { startCatalogSync } from './services/catalog-sync.js';
@@ -24,7 +25,7 @@ async function main() {
 
   const onReady = (host: string) => () => {
     const display = host.includes(':') ? `[${host}]` : host;
-    console.log(`Server running on http://${display}:${PORT}`);
+    console.log(`${APP_NAME} running on http://${display}:${PORT}`);
     console.log(`Proxy endpoint: http://${display}:${PORT}/v1/chat/completions`);
     startHealthChecker();
     startCatalogSync();

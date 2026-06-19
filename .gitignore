@@ -7,7 +7,11 @@ server/data/
 *.bak
 .env
 .env.local
+.env.production
 .DS_Store
+
+# Local deployment artifacts (may contain encryption keys, DB dumps, server paths)
+deploy/
 
 # Personal deployment scripts (contain keys/credentials — kept local)
 deploy-pi.sh

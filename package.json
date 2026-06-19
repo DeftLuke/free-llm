@@ -1,5 +1,6 @@
 {
-  "name": "freellmapi",
+  "name": "deftllm",
+  "description": "DEFTLLM — self-hosted OpenAI-compatible LLM router with smart failover",
   "private": true,
   "workspaces": [
     "shared",

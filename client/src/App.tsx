@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate, NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Languages, Menu, MoreHorizontal, Moon, Sun } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
@@ -26,6 +26,7 @@ import FusionPage from '@/pages/FusionPage'
 import EmbeddingsPage from '@/pages/EmbeddingsPage'
 import AnalyticsPage from '@/pages/AnalyticsPage'
 import PremiumPage from '@/pages/PremiumPage'
+import { BrandLogo } from '@/components/brand-logo'
 
 const queryClient = new QueryClient()
 
@@ -82,12 +83,7 @@ function useDarkMode() {
 }
 
 function Brand() {
-  return (
-    <Link to="/" className="flex items-center gap-2 transition-opacity hover:opacity-70">
-      <span className="inline-block size-2 rounded-full bg-foreground" />
-      <span className="font-semibold tracking-tight text-sm">FreeLLMAPI</span>
-    </Link>
-  )
+  return <BrandLogo />
 }
 
 // True when the dashboard runs inside the desktop shell (Electron preload

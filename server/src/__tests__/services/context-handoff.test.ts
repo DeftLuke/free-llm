@@ -93,7 +93,7 @@ describe('maybeInjectContextHandoff — on_model_switch', () => {
     expect(result.injected).toBe(true);
     const injected = result.messages.find(m => m.role === 'system');
     expect(injected).toBeDefined();
-    expect(injected!.content).toContain('FreeLLMAPI context handoff:');
+    expect(injected!.content).toContain('DEFTLLM context handoff:');
     expect(injected!.content).toContain('groq:llama-3');
     expect(injected!.content).toContain('google:gemini-flash');
   });
@@ -187,7 +187,7 @@ describe('maybeInjectContextHandoff — on_model_switch', () => {
     expect(result.injected).toBe(true);
     expect(result.messages[0]).toBe(sysMsg);
     expect(result.messages[1].role).toBe('system');
-    expect(result.messages[1].content).toContain('FreeLLMAPI context handoff:');
+    expect(result.messages[1].content).toContain('DEFTLLM context handoff:');
   });
 
   it('isolates sessions by sessionKey', () => {
